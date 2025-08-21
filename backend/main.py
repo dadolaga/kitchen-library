@@ -1,9 +1,12 @@
 from PIL import Image
+from dotenv import load_dotenv
 import google.generativeai as genai
 import os
 
+load_dotenv("/workspaces/kitchen-library/backend/private.env")
+
 # Configure the API key
-genai.configure(api_key="AIzaSyC1_L895LwUqVMcP22OFIP2eVt4WkFjd78")
+genai.configure(api_key=os.getenv("GOOGLE_API_KEY"))
 
 # Load the image from a file
 image_path = 'image.png'
