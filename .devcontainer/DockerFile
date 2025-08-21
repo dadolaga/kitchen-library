@@ -1,0 +1,17 @@
+# Usa l'immagine base specificata nel file devcontainer.json
+FROM node:lts
+
+# Esegui il comando post-create per installare tesseract-ocr.
+# L'utilizzo di un unico comando RUN con '&&' riduce il numero di livelli dell'immagine.
+RUN apt-get update && apt-get install -y \
+    tesseract-ocr \
+    tesseract-ocr-ita \
+    python3 \
+    python3-pip \
+    && rm -rf /var/lib/apt/lists/*
+
+# Imposta la directory di lavoro all'interno del container.
+# Questo corrisponde al target del mount nel devcontainer.json.
+# Anche se non strettamente necessario per la build, è una buona pratica
+# per definire dove verranno eseguiti i comandi successivi.
+WORKDIR /app

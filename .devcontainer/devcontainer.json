@@ -1,13 +1,7 @@
 {
     "name": "Kitchen library DEV",
-    "image": "node:lts",
-    "forwardPorts": [
-        "3000:3000"
-    ],
-    "portsAttributes": {
-        "3000": {
-            "label": "Application"
-        }
+    "build": {
+        "dockerfile": "${localWorkspaceFolder}/.devcontainer/DockerFile"
     },
     "mounts": [
         "source=${localWorkspaceFolder},target=/app,type=bind"
