@@ -12,5 +12,13 @@
     "mounts": [
         "source=${localWorkspaceFolder},target=/app,type=bind"
     ], 
-    "shutdownAction": "stopContainer"
+    "shutdownAction": "stopContainer",
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "mhutchie.git-graph",
+                "formulahendry.auto-rename-tag"
+            ]
+        }
+    }
 }
