@@ -14,3 +14,9 @@ source backend/venv/bin/activate
 
 pip install -r backend/requirements.txt
 ```
+
+## Configure
+To use this program must be set simple enviroment variable. Create a `private.env` file in backend folder and add this row:
+```
+GOOGLE_API_KEY=api_google
+```
